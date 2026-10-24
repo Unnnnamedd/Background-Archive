@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Zilla Slab Regular';
+    src: url('./assets/fonts/ZillaSlab-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Zilla Slab Semibold';
+    src: url('./assets/fonts/ZillaSlab-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Zilla Slab Italic';
+    src: url('./assets/fonts/ZillaSlab-Italic.ttf') format('truetype');
+}
+* {
+    font-family: 'Zilla Slab Regular';
+}
