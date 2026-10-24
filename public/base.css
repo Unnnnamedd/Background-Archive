@@ -13,3 +13,18 @@
 * {
     font-family: 'Zilla Slab Regular';
 }
+h2 {
+    box-shadow: 0 0 20px 10px #fff, 0 0 30px 15px #fff;
+    background-color: #fff;
+}
+.glowing-circle {
+    width: 5px;
+    height: 5px;
+    background-color: #ff00ff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 6px #ff00ff, 0 0 40px 12px #ff00ff, 0 0 60px 20px #ff00ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
