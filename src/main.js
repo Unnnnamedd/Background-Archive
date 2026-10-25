@@ -1,12 +1,22 @@
-class app {
-  static loop() {
-    document.getElementById('glowing-circle').style.transform = `translate(${mouseX}px, ${mouseY}px)`
-    requestAnimationFrame(app.loop);
+import { Input } from './input.js';
+import('./init.js')
+  .then((module) => {
+    console.log('init.js loaded');
+    module.Init.run();
+  })
+  .catch((error) => {
+    console.error('Error loading module init.js:', error);
+  });
+
+class App {
+  static deltaTime = 0;
+  static lastTime = 0;
+  static loop(t) {
+    this.deltaTime = (t - this.lastTime) / 1000;
+    this.lastTime = t;
+    //  not in final place; will be moved
+    document.getElementById('glowing-circle').style.transform = `translate(${Input.mouse.x}px, ${Input.mouse.y}px)`;
+    requestAnimationFrame((t) => App.loop(t));
   }
 }
-let mouseX, mouseY;
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-requestAnimationFrame(app.loop);
+requestAnimationFrame((t) => App.loop(t));
